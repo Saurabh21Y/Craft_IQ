@@ -1,17 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
 }
+/* @theme {
+  --primary-color: #5044E5; */
+
 body {
   height: 100vh;
   background: linear-gradient(135deg, #a2d2ff 0%, #b8c0ff 100%);
-
-
+  
   display: flex;
   justify-content: center;
   align-items: center;
-
   
 }
 
