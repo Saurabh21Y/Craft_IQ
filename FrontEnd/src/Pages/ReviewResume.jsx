@@ -8,4 +8,4 @@ const ReviewResume = () => {
   )
 }
 
-export default Re
+export default ReviewResume

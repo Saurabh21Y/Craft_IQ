@@ -4,22 +4,21 @@
 
 
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  
   font-family: "Outfit", sans-serif;
 }
-/* @theme {
-  --primary-color: #5044E5; */
+@theme{
+  --color-primary: #5044E5;
+}
 
 body {
-  height: 100vh;
   background: linear-gradient(135deg, #a2d2ff 0%, #b8c0ff 100%);
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  margin: 0;
+  padding: 0;
+
   
 }
+
 
 

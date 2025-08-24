@@ -1,15 +1,5 @@
-import React from 'react';
-  
-  const Assets = () =>  {
-	return (
-	  <div>
-	  </div>
-	);
-  }
-  
-  export default Assets;
-  import logo from "./logo.svg";
-import gradientBackground from "./gradientBackground.png";
+import logo from "./logo.svg";
+import logo1 from "./logo1.png";
 import user_group from "./user_group.png";
 import star_icon from "./star_icon.svg";
 import star_dull_icon from "./star_dull_icon.svg";
@@ -22,7 +12,7 @@ import ai_gen_img_3 from "./ai_gen_img_3.png";
 
 export const assets = {
     logo,
-    gradientBackground,
+    logo1,
     user_group,
     star_icon,
     star_dull_icon,
