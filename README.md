@@ -4,4 +4,5 @@
 4th commit is adding background to index.css<br>
 5th commit is routes work is in progress<br>
 6th commit is completing the landing page rest is pending<br>
+7th commit is starting sidebar componenet<br>
 
