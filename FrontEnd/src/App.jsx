@@ -7,6 +7,7 @@ import DashBoard from './Pages/DashBoard'
 import WriteArticle from './Pages/WriteArticle'
 import BlogTitle from './Pages/BlogTitle'
 import GenerateImages from './Pages/GenerateImages'
+import RemoveBackground from './Pages/RemoveBackground'
 import RemoveObject from './Pages/RemoveObject'
 import ReviewResume from './Pages/ReviewResume'
 import Community from './Pages/Community'
@@ -21,6 +22,7 @@ function App() {
         <Route path="Write-Article" element={<WriteArticle />} />
         <Route path="Blog-Titles" element={<BlogTitle />} />
         <Route path="Generate-Images" element={<GenerateImages />} />
+        <Route path="Remove-Background" element={<RemoveBackground />} />
         <Route path="Remove-Object" element={<RemoveObject />} />
         <Route path="Review-Resume" element={<ReviewResume />} />
         <Route path="Community" element={<Community />} />

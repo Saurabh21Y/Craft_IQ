@@ -1,33 +1,62 @@
-import React ,{ useState} from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
-import { assets } from '../assets/assets';
-import { X, Menu } from 'lucide-react';
+import React, { useState } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
+import { assets } from "../assets/assets";
+import { X, Menu } from "lucide-react";
+import Sidebar from "../Components/Sidebar";
+import { SignIn,useUser } from "@clerk/clerk-react";
 
 const Layout = () => {
-  const navigate=useNavigate();
-  const[sidebar,setSidebar]=useState(false);
-  return (
-    <div className='flex flex-col items-start justify-start h-screen'>
+  const navigate = useNavigate();
+  const [sidebar, setSidebar] = useState(false);
+  const { user } = useUser();
 
-      <nav className='w-full px-8 min-h-14 flex items-center justify-between border-b border-gray-200'>
+  return user ? (
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#a2d2ff] to-[#b8c0ff]">
+      {/* Navbar */}
+      <nav className="w-full px-6 py-4 flex items-center justify-between bg-white/20 backdrop-blur-md shadow-md">
+        {/* Logo */}
+        <div className="flex items-center space-x-2">
+          <img
+            src={assets.logo1}
+            alt="logo1"
+            onClick={() => navigate("/")}
+            className="h-20 w-auto cursor-pointer"
+          />
+          <h1 className="text-lg font-bold text-gray-800">CraftIQ</h1>
+        </div>
 
-        <img src={assets.logo1} alt="logo1" 
-        onClick={() => navigate('/')} 
-        className="h-30 sm:h-32 w-auto cursor-pointer" />
-
-        {
-          sidebar 
-            ? <X onClick={() => setSidebar(false)} className="w-6 h-6 text-gray-600 hidden lg:block" /> 
-            : <Menu onClick={() => setSidebar(true)} className="w-6 h-6 text-gray-600 lg:hidden" />
-        }
-
-
-
+        {/* Mobile Toggle */}
+        {sidebar ? (
+          <X
+            onClick={() => setSidebar(false)}
+            className="w-7 h-7 text-gray-700 lg:hidden cursor-pointer"
+          />
+        ) : (
+          <Menu
+            onClick={() => setSidebar(true)}
+            className="w-7 h-7 text-gray-700 lg:hidden cursor-pointer"
+          />
+        )}
       </nav>
 
-      <Outlet />
-    </div>
-  )
-}
+      {/* Content Area */}
+      <div className="flex flex-1">
+        {/* Sidebar */}
+        <Sidebar sidebar={sidebar} setSidebar={setSidebar} />
+        
+        <div className="mt-6">
+            <Outlet />
+          </div>
 
-export default Layout
+      </div>
+    </div>
+  ) : (
+
+    <div className="flex items-center justify-center h-screen">
+      <SignIn />
+    </div>
+        
+    )
+};
+
+export default Layout;
