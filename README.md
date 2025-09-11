@@ -6,4 +6,5 @@
 6th commit is completing the landing page rest is pending<br>
 7th commit is starting sidebar componenet<br>
 8th commit is for completion of the Layout<br>
+9th commit is for completion of dashboard<br>
 
