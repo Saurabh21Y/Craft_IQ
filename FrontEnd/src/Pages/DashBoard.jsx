@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { dummyCreationData } from '../assets/assets'
 import { Gem, Sparkles } from 'lucide-react';
 import { Protect } from '@clerk/clerk-react';
+import CreationItem from '../Components/CreationItem';
 
 const DashBoard = () => {
   const [creations, setCreations] = useState([]);
@@ -11,49 +12,48 @@ const DashBoard = () => {
   }, []);
 
   return (
-    <section className="max-w-5xl mx-auto">
-      <div className="flex flex-col sm:flex-row gap-6">
-        {/* Total Creations */}
-        <div className='flex-1 flex items-center justify-between gap-6 p-5 sm:p-6 bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition'>
-          <div>
-            <p className='text-sm text-gray-500 tracking-wide'>Total Creations</p>
-            <h2 className='font-bold text-2xl text-slate-700'>{creations.length}</h2>
+    <div className='h-full overflow-y-auto p-6'>   {/* yaha scroll bar se problem ho raha hai to scroll ko auto kr rahe hai  className='h-full overflow-y-scroll p-6' */}
+      <div className="flex flex-row gap-6">
+        {/* Total card creation */}
+
+        <div className='flex justify-between item-center w-100 p-4 px-6 bg-white rounded-xl border border-gray-200'>
+          <div className='text-slate-600'>
+            <p className='text-sm'>Total Creation</p>
+            <h2 className='font-semibold text-xl'>{creations.length}</h2>
           </div>
-          <span className='flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-[#3588F2] to-[#0BB0D7] shadow'>
-            <Sparkles className='w-6 h-6 text-white' />
-          </span>
+          <div className='w-10 h-10 rounded-lg bg-gradient-to-br from-[#3588F2] to-[#0BB0D7] text-white flex items-center justify-center'>
+            <Sparkles className='w-5 text-white'/>
+          </div>
         </div>
         {/* Plan status */}
-        <div className='flex-1 flex items-center justify-between gap-6 p-5 sm:p-6 bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition'>
-          <div>
-            <p className='text-sm text-gray-500 tracking-wide'>Active Plan</p>
-            <h2 className='font-bold text-2xl text-slate-700'>
+        <div className='flex justify-between item-center w-100 p-4 px-6 bg-white rounded-xl border border-gray-200'>
+
+          <div className='text-slate-600'>
+            <p className='text-sm'>Active Plan</p>
+            <h2 className='font-semibold text-xl'>
               <Protect plan='subscription' fallback='Free'>Premium</Protect>
             </h2>
           </div>
-          <span className='flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF61C5] to-[#9E53EE] shadow'>
-            <Gem className='w-6 h-6 text-white' />
-          </span>
+
+          <div className='w-10 h-10 rounded-lg bg-gradient-to-br from-[#FF61C5] to-[#9E53EE] text-white flex items-center justify-center'>
+            <Gem className='w-5 text-white'/>
+          </div>
+          
         </div>
+
       </div>
 
-      <div className='mt-10 space-y-3'>
-        <p className='mb-2 text-lg font-semibold text-slate-700'>Recent Creations</p>
-        {/* Placeholder for recent creations - can add a grid or list here */}
-        {creations.length === 0 ? (
-          <div className="text-sm text-gray-400">No creations yet.</div>
-        ) : (
-          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {creations.map((item, idx) => (
-              <li key={idx} className="p-4 bg-white rounded-xl border border-gray-100 shadow hover:shadow-md flex flex-col">
-                <span className="font-medium text-gray-700">{item.title || `Creation #${idx + 1}`}</span>
-                <span className="text-xs text-gray-400 mt-1">{item.date || "Recently added"}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    </section>
+    {/* My Creations */}
+    <div className='space-y-3'>
+      <p className='mt-6 mb-4'>My Creations</p>
+      {
+        creations.map((item)=> < CreationItem key={item.id} item={item}/>)
+      }
+    </div>
+
+    </div>
+
+
   )
 }
 
