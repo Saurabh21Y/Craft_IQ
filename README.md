@@ -7,4 +7,5 @@
 7th commit is starting sidebar componenet<br>
 8th commit is for completion of the Layout<br>
 9th commit is for completion of dashboard<br>
+10th commit is for completion of Frontend<br>
 
