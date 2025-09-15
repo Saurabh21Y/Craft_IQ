@@ -17,7 +17,7 @@ export const assets = {
     star_icon,
     star_dull_icon,
     profile_img_1,
-    arrow_icon,
+    arrow_icon
 };
 
 export const AiToolsData = [

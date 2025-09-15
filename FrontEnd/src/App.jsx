@@ -26,8 +26,6 @@ function App() {
         <Route path="Remove-Object" element={<RemoveObject />} />
         <Route path="Review-Resume" element={<ReviewResume />} />
         <Route path="Community" element={<Community />} />
-
-
         </Route>
       </Routes>
     </div>
