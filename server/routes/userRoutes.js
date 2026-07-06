@@ -5,6 +5,7 @@ import { getPublishCreations, getUserCreations, toggleLikeCreations } from "../c
 const userRouter = express.Router();
 
 userRouter.get('/get-user-creations', auth, getUserCreations)
+userRouter.post('/get-user-creations', auth, getUserCreations)
 userRouter.get('/get-published-creations', auth, getPublishCreations)
 userRouter.post('/toggle-like-creations', auth, toggleLikeCreations)
 
