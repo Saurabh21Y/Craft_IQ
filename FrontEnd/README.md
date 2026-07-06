@@ -1,12 +1,58 @@
-# React + Vite
+# CraftIQ Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite frontend for the CraftIQ AI SaaS application.
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Install dependencies:
 
-## Expanding the ESLint configuration
+```bash
+cd FrontEnd
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Create a local environment file:
+
+```bash
+copy .env.example .env
+```
+
+3. Update `.env` with your values.
+
+## Environment variables
+
+Create `FrontEnd/.env` using this template:
+
+```env
+VITE_BASE_URL=http://localhost:5000
+VITE_CLERK_PUBLISHABLE_KEY=pk_test_your_clerk_publishable_key
+```
+
+## Run locally
+
+Start the frontend dev server:
+
+```bash
+npm run dev
+```
+
+## Build
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+## Preview build
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Notes
+
+- The frontend expects the backend API to be running at the URL defined in `VITE_BASE_URL`.
+- If you change backend port or deployment URL, update `VITE_BASE_URL` accordingly.
